@@ -19,9 +19,8 @@ module.exports.dataReceiver = (event, context, callback) => {
   return kinesis.putRecord(params, (error, data) => {
     if (error) {
       callback(error);
-    } else {
-      callback(null, { message: 'Data successfully written to Kinesis stream "data-receiver"' });
     }
+    callback(null, { message: 'Data successfully written to Kinesis stream "data-receiver"' });
   });
 };
 
